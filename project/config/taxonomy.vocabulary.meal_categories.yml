@@ -1,0 +1,9 @@
+uuid: 556071b5-fa56-4dc7-8db2-87f62303551b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Meal categories'
+vid: meal_categories
+description: null
+weight: 0
+new_revision: false
