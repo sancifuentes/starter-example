@@ -4,10 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.recipe.body
+    - field.field.node.recipe.field_chef
+    - field.field.node.recipe.field_cooking_time
+    - field.field.node.recipe.field_cuisine
     - field.field.node.recipe.field_diet_types
+    - field.field.node.recipe.field_difficulty_level
     - field.field.node.recipe.field_directions
+    - field.field.node.recipe.field_ingredients
     - field.field.node.recipe.field_meal_categories
+    - field.field.node.recipe.field_media
     - field.field.node.recipe.field_medias
+    - field.field.node.recipe.field_steps
     - node.type.recipe
   module:
     - media_library
@@ -35,9 +42,38 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_chef:
+    type: entity_reference_autocomplete
+    weight: 127
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cooking_time:
+    type: number
+    weight: 132
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_cuisine:
+    type: options_select
+    weight: 126
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_diet_types:
     type: options_select
     weight: 123
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_difficulty_level:
+    type: options_select
+    weight: 129
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -59,15 +95,26 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_meal_categories:
-    type: entity_reference_autocomplete
-    weight: 124
+  field_ingredients:
+    type: string_textfield
+    weight: 130
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_meal_categories:
+    type: options_select
+    weight: 124
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 128
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_medias:
     type: media_library_widget
@@ -75,6 +122,14 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_steps:
+    type: string_textfield
+    weight: 131
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

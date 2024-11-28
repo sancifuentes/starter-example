@@ -1,19 +1,19 @@
-uuid: 482ec5bc-e998-43be-92b2-65337b4fe36e
+uuid: 2fe41977-0cb0-4e8b-900e-8c4cf9346da4
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_meal_categories
-field_name: field_meal_categories
+id: node.field_cooking_time
+field_name: field_cooking_time
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: taxonomy_term
+  unsigned: false
+  size: normal
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

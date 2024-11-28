@@ -1,19 +1,19 @@
-uuid: 482ec5bc-e998-43be-92b2-65337b4fe36e
+uuid: 3860db1a-1df8-4ec0-b30b-e2a415ec9e8a
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-    - taxonomy
-id: node.field_meal_categories
-field_name: field_meal_categories
+id: node.field_photo
+field_name: field_photo
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: media
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
