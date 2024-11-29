@@ -1,0 +1,20 @@
+uuid: 668ed04a-c592-45e0-bb4f-dc26a93efb63
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.diet_types
+  module:
+    - path
+id: taxonomy_term.diet_types.path
+field_name: path
+entity_type: taxonomy_term
+bundle: diet_types
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,20 @@
+uuid: d1e15336-d377-4464-b21b-4e6ed338e715
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.meal_categories
+  module:
+    - path
+id: taxonomy_term.meal_categories.path
+field_name: path
+entity_type: taxonomy_term
+bundle: meal_categories
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

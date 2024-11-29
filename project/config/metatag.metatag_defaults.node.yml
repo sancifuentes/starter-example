@@ -1,0 +1,14 @@
+uuid: f4db980d-b2f1-43b3-95a9-bff0e5977f8a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Content
+tags:
+  canonical_url: '[node:url]'
+  description: '[node:summary]'
+  og_site_name: '[site:name]'
+  og_title: '[node:title]'
+  title: '[node:title] | [site:name]'

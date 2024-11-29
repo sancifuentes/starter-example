@@ -1,0 +1,8 @@
+uuid: 18f7f700-3c0f-4128-9ecc-e3060723c2c0
+langcode: en
+status: true
+dependencies: {  }
+id: node__recipe
+label: 'Content: Recipe'
+tags:
+  og_type: recipe

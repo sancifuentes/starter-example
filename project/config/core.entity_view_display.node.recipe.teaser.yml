@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.recipe.field_meal_categories
     - field.field.node.recipe.field_media
     - field.field.node.recipe.field_medias
+    - field.field.node.recipe.field_metatags
     - field.field.node.recipe.field_steps
     - node.type.recipe
   module:
@@ -65,4 +66,6 @@ hidden:
   field_meal_categories: true
   field_media: true
   field_medias: true
+  field_metatags: true
   field_steps: true
+  langcode: true

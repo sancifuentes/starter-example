@@ -1,0 +1,22 @@
+uuid: 6d582863-3bf7-4c6a-a82c-034744f5b9c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.recipe
+id: node.recipe.sticky
+field_name: sticky
+entity_type: node
+bundle: recipe
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: 92b5f0d4-974c-42f5-a764-12ec0643262c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.diet_types
+id: taxonomy_term.diet_types.status
+field_name: status
+entity_type: taxonomy_term
+bundle: diet_types
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

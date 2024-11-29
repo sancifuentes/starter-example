@@ -1,0 +1,20 @@
+uuid: 4c0e0c10-74d7-4e57-a04c-475883f2a96d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.cooking_method
+  module:
+    - path
+id: taxonomy_term.cooking_method.path
+field_name: path
+entity_type: taxonomy_term
+bundle: cooking_method
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

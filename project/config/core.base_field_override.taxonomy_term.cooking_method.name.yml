@@ -1,0 +1,18 @@
+uuid: 15d1cbd3-ff15-46bc-8532-1d54d0996eb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.cooking_method
+id: taxonomy_term.cooking_method.name
+field_name: name
+entity_type: taxonomy_term
+bundle: cooking_method
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

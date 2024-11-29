@@ -1,0 +1,18 @@
+uuid: 5e993692-3cc7-4417-a12f-d1b29c62bed0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.diet_types
+id: taxonomy_term.diet_types.name
+field_name: name
+entity_type: taxonomy_term
+bundle: diet_types
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

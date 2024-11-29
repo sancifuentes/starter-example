@@ -1,0 +1,18 @@
+uuid: b5970079-8a0f-49e5-a2e1-3cdef6969459
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.meal_categories
+id: taxonomy_term.meal_categories.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: meal_categories
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,21 @@
+uuid: 40aa62ce-fed0-4228-9419-e978fe054dd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.meal_categories
+  module:
+    - text
+id: taxonomy_term.meal_categories.description
+field_name: description
+entity_type: taxonomy_term
+bundle: meal_categories
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

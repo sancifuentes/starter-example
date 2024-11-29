@@ -1,0 +1,20 @@
+uuid: 1399e60d-4c36-4196-b660-921e71dbc6d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.chef
+id: node.chef.uid
+field_name: uid
+entity_type: node
+bundle: chef
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

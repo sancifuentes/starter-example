@@ -14,10 +14,12 @@ dependencies:
     - field.field.node.recipe.field_meal_categories
     - field.field.node.recipe.field_media
     - field.field.node.recipe.field_medias
+    - field.field.node.recipe.field_metatags
     - field.field.node.recipe.field_steps
     - node.type.recipe
   module:
     - entity_reference_revisions
+    - metatag
     - options
     - text
     - user
@@ -116,6 +118,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
   field_steps:
     type: string
     label: above
@@ -129,4 +138,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  langcode: true

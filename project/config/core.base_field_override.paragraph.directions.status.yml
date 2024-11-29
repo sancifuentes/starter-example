@@ -1,0 +1,22 @@
+uuid: ec386822-86c5-49df-91c6-9d433199ae5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.directions
+id: paragraph.directions.status
+field_name: status
+entity_type: paragraph
+bundle: directions
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

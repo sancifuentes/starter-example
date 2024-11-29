@@ -1,0 +1,18 @@
+uuid: bb286b59-2b4d-4992-a1b2-a25433ef454d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.meal_categories
+id: taxonomy_term.meal_categories.name
+field_name: name
+entity_type: taxonomy_term
+bundle: meal_categories
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
