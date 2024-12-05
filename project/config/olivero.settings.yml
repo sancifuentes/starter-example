@@ -8,10 +8,11 @@ features:
   favicon: true
   node_user_picture: false
 logo:
+  path: 'public://Carrot-Cake-LEAD-3-81e1d3700f0241279f9ba4c2b8b6153c.jpg'
   use_default: false
 third_party_settings:
   shortcut:
     module_link: true
 mobile_menu_all_widths: 0
 site_branding_bg_color: default
-base_primary_color: '#1b9ae4'
+base_primary_color: '#46ddc4'

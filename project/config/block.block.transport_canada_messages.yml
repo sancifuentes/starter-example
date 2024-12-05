@@ -1,0 +1,22 @@
+uuid: f6a3dee4-ba45-4411-9c38-ced62c9cc0f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - transport_canada
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: transport_canada_messages
+theme: transport_canada
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

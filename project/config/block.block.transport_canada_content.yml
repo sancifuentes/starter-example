@@ -1,0 +1,22 @@
+uuid: 3964c697-ad68-4211-8994-6c93ccde0780
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - transport_canada
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: transport_canada_content
+theme: transport_canada
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

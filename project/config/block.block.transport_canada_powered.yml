@@ -1,0 +1,22 @@
+uuid: 7fe2b453-7322-4dbb-a84d-84e715c20614
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - transport_canada
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: transport_canada_powered
+theme: transport_canada
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

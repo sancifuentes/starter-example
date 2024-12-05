@@ -1,0 +1,32 @@
+uuid: f7f16148-32b0-4deb-9004-ce38ef2d49f6
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.recipes
+  module:
+    - node
+    - views
+  theme:
+    - transport_canada
+id: transport_canada_views_block__recipes_block_1
+theme: transport_canada
+region: header
+weight: 0
+provider: null
+plugin: 'views_block:recipes-block_1'
+settings:
+  id: 'views_block:recipes-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      recipe: recipe

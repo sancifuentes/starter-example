@@ -1,0 +1,20 @@
+uuid: 46e9eda8-6b20-4328-8c70-13182520a90c
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - transport_canada
+id: transport_canada_languageswitcher
+theme: transport_canada
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: '0'
+  provider: language
+visibility: {  }

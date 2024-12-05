@@ -1,0 +1,23 @@
+uuid: ce301f38-337b-42ab-8fa4-290a2de51c80
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+  theme:
+    - transport_canada
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: transport_canada_syndicate
+theme: transport_canada
+region: header
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }
