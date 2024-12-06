@@ -1,0 +1,24 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: image_card
+status: stable
+props:
+  type: object
+  properties:
+    card_title:
+      type: string
+      title: Card title
+    card_description:
+      type: string
+      title: Card description
+    card_image:
+      type: object
+      title: Card image
+    card_cta:
+      type: object
+      title: Call To Action button
+    attributes:
+      type: string
+      title: Attributes Drupal object
+slots:
+  headerSlot:
+    title: Header slots

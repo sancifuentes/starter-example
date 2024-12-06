@@ -5,6 +5,7 @@ version: 1.0.0
 libraries:
   - transport_canada/base
   - transport_canada/messages
+  - transport_canada/tailwind
   - core/normalize
 regions:
   header: Header
