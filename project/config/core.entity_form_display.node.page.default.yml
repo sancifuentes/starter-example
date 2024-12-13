@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_components
+    - field.field.node.page.field_slides
     - node.type.page
   module:
     - content_moderation
@@ -34,9 +34,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_components:
+  field_slides:
     type: paragraphs
-    weight: 121
+    weight: 122
     region: content
     settings:
       title: Paragraph

@@ -3,27 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_card.field_cta
+    - field.field.paragraph.image_card.field_buttons
     - field.field.paragraph.image_card.field_description
     - field.field.paragraph.image_card.field_image
     - field.field.paragraph.image_card.field_title
     - paragraphs.paragraphs_type.image_card
   module:
-    - link
+    - entity_reference_revisions
 id: paragraph.image_card.default
 targetEntityType: paragraph
 bundle: image_card
 mode: default
 content:
-  field_cta:
-    type: link
+  field_buttons:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 3
     region: content

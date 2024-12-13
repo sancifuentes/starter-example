@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
-    - field.field.node.page.field_components
+    - field.field.node.page.field_slides
     - node.type.page
   module:
     - text
@@ -29,6 +29,6 @@ content:
     weight: 101
     region: content
 hidden:
-  field_components: true
+  field_slides: true
   langcode: true
   search_api_excerpt: true

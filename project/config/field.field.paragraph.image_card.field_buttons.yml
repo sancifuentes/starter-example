@@ -1,0 +1,37 @@
+uuid: dcd18db7-c661-4b74-9f7e-e11783933a44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.image_card
+  module:
+    - entity_reference_revisions
+id: paragraph.image_card.field_buttons
+field_name: field_buttons
+entity_type: paragraph
+bundle: image_card
+label: Buttons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      button: button
+    negate: 0
+    target_bundles_drag_drop:
+      button:
+        weight: 4
+        enabled: true
+      directions:
+        weight: 5
+        enabled: false
+      image_card:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

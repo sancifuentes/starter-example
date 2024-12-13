@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_components
+    - field.field.node.page.field_slides
     - node.type.page
   module:
     - entity_reference_revisions
@@ -24,14 +24,14 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-  field_components:
+  field_slides:
     type: entity_reference_revisions_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 103
     region: content
   links:
     settings: {  }

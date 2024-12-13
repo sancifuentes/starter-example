@@ -1,16 +1,16 @@
-uuid: c1f4878c-ed21-49e9-9998-84ad63dcecb3
+uuid: 981d222b-3d7e-43c0-878a-4f1f668bf873
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_cta
-    - paragraphs.paragraphs_type.image_card
+    - paragraphs.paragraphs_type.button
   module:
     - link
-id: paragraph.image_card.field_cta
+id: paragraph.button.field_cta
 field_name: field_cta
 entity_type: paragraph
-bundle: image_card
+bundle: button
 label: CTA
 description: ''
 required: false

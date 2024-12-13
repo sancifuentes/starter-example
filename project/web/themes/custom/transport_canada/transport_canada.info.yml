@@ -6,6 +6,7 @@ libraries:
   - transport_canada/base
   - transport_canada/messages
   - transport_canada/tailwind
+  - transport_canada/font
   - core/normalize
 regions:
   header: Header

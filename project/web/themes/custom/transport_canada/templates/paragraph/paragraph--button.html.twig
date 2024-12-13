@@ -46,30 +46,12 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
-    
-{% set attributes = attributes.addClass(classes) %}
-    
-    {# {{ include('transport_canada:image_card', {
-      card_title: content.field_title,
-      card_description: content.field_description,
-      card_image: content.field_image,
-      card_cta: content.field_cta,
-      attributes: attributes
-    }) }} #}
-
-    {% embed('transport_canada:image_card') with {
-      card_description: content.field_description,
-      card_image: content.field_image,
-      card_cta: content.field_buttons,
-      attributes: attributes
-    } %}
-      {% block headerSlot %}
-        <h3 class="tc-image-card__title font-bold">
-            {{ content.field_title }}
-        </h3>
-      {% endblock headerSlot %}
-    {% endembed %}
-
-  {# <div{{ attributes.addClass(classes) }}>
-
-  </div> #}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ include('transport_canada:button', {
+        cta: content,
+      }) }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,19 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Slider
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: title
+  slots:
+    slides:
+      title: slides
+libraryOverrides:
+  css:
+    component:
+      https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css: {}
+      slider.css: {}
+  js:
+    https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js: {}
+    slider.js: {}
