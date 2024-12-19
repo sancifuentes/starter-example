@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Hello World module.
+ */
+use \Drupal\Core\Form\FormStateInterface;
+/** 
+ * Implements hook_form_alter().
+ * 
+ * */ 
+function hello_world_form_alter(&$form,  FormStateInterface $form_state, $form_id) : void {
+    ksm($form_id);
+    ksm($form);
+}
