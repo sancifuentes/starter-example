@@ -1,0 +1,7 @@
+block.settings.download_files_block:
+  type: block_settings
+  label: 'Download Files Block block'
+  mapping:
+    example:
+      type: string
+      label: Example
