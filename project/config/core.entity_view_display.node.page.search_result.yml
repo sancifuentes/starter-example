@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_result
     - field.field.node.page.body
     - field.field.node.page.field_slides
+    - field.field.node.page.field_youtube_id
     - node.type.page
   module:
     - text
@@ -32,5 +33,6 @@ content:
     region: content
 hidden:
   field_slides: true
+  field_youtube_id: true
   langcode: true
   search_api_excerpt: true

@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_slides
+    - field.field.node.page.field_youtube_id
     - node.type.page
+    - workflows.workflow.editorial_workflow
   module:
     - content_moderation
     - paragraphs
@@ -51,6 +53,14 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_youtube_id:
+    type: string_textfield
+    weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

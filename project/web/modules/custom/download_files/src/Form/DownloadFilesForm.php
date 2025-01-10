@@ -87,9 +87,12 @@ final class DownloadFilesForm extends FormBase {
 
     //Using the Entity Query -----------------------------------
 
+    $config = \Drupal::config('download_files.settings');
+    $media_types = $config->get('allowed_media_types');
+
     $ids = \Drupal::entityQuery('media')
       ->condition('status', 1)
-      ->condition('bundle', ['image'], 'IN')
+      ->condition('bundle', $media_types, 'IN')
       ->accessCheck()
       ->execute();
 
@@ -108,7 +111,7 @@ final class DownloadFilesForm extends FormBase {
       // $options[$media->field_media_image->entity->uri->value] = $media->label();
     }
 
-    ksm($options);
+    // ksm($options);
 
       return $options;
   }
@@ -151,19 +154,23 @@ final class DownloadFilesForm extends FormBase {
         break;
       case 'image':
         $uri = $media->field_media_image->entity->uri->value;
-        $response = new BinaryFileResponse($uri);
-        $response->setContentDisposition('attachment');
-        $form_state->setResponse($response);
+        break;
+      case 'icon':
+        $uri = $media->field_media_image_1->entity->uri->value;
         break;
       default:
         // Document or files
         $uri = $media->field_media_file->entity->uri->value;
-        $response = new BinaryFileResponse($uri);
-        $response->setContentDisposition('attachment');
-        $form_state->setResponse($response);
         break;
         
     }
+
+    if ($uri) {
+        $response = new BinaryFileResponse($uri);
+        $response->setContentDisposition('attachment');
+        $form_state->setResponse($response);
+    }
+        
 
     // ksm($media->bundle());
 

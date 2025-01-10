@@ -1,0 +1,21 @@
+uuid: 0d4d87cf-d499-45e3-9ad5-c7146ae3e6c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - download_files
+  theme:
+    - transport_canada
+id: transport_canada_downloadfilesblock
+theme: transport_canada
+region: sidebar
+weight: 0
+provider: null
+plugin: download_files_block
+settings:
+  id: download_files_block
+  label: 'Download Files Block'
+  label_display: visible
+  provider: download_files
+  example: 'Hello world!'
+visibility: {  }
