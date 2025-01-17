@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace Drupal\audit\Entity;
 
 use Drupal\Core\Entity\EntityChangedTrait;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\RevisionableContentEntityBase;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\audit\DeletionRecordInterface;
+use Drupal\user\EntityOwnerTrait;
 
 /**
  * Defines the deletion record entity class.
@@ -48,6 +50,7 @@ use Drupal\audit\DeletionRecordInterface;
  *     "revision" = "revision_id",
  *     "label" = "label",
  *     "uuid" = "uuid",
+ *     "owner" = "uid",
  *   },
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_uid",
@@ -71,6 +74,18 @@ use Drupal\audit\DeletionRecordInterface;
 final class DeletionRecord extends RevisionableContentEntityBase implements DeletionRecordInterface {
 
   use EntityChangedTrait;
+  use EntityOwnerTrait;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function preSave(EntityStorageInterface $storage): void {
+    parent::preSave($storage);
+    // if (!$this->getOwnerId()) {
+    //   // If no owner has been set explicitly, make the anonymous user the owner.
+    //   $this->setOwnerId(0);
+    // }
+  }
 
   /**
    * {@inheritdoc}
@@ -115,9 +130,100 @@ final class DeletionRecord extends RevisionableContentEntityBase implements Dele
       ->setLabel(t('Changed'))
       ->setDescription(t('The time that the deletion record was last edited.'));
 
-      $fields['deleted'] = BaseFieldDefinition::create('deleted')
-        ->setLabel(t('Deleted'))
-        ->setDescription(t('The time that the entity was deleted.'));
+    $fields['deleted'] = BaseFieldDefinition::create('timestamp')
+      ->setLabel(t('Deleted'))      
+      ->setDescription(t('The time that the entity was deleted.'))
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'timestamp',
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_timestamp',
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['deleted_entity_author'] = BaseFieldDefinition::create('entity_reference')
+      ->setRevisionable(TRUE)
+      ->setLabel(t('Deleted entity author'))
+      ->setDescription(t('Author of the entity being deleted.'))
+      ->setSetting('target_type', 'user')
+      ->setDefaultValueCallback(self::class . '::getDefaultEntityOwner')
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => 60,
+          'placeholder' => '',
+        ],
+        'weight' => 15,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'author',
+        'weight' => 15,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['deleted_by'] = BaseFieldDefinition::create('entity_reference')
+      ->setRevisionable(TRUE)
+      ->setLabel(t('Deleted by'))
+      ->setDescription(t('The user who deleted the entity.'))
+      ->setSetting('target_type', 'user')
+      ->setDefaultValueCallback(self::class . '::getDefaultEntityOwner')
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => 60,
+          'placeholder' => '',
+        ],
+        'weight' => 15,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'author',
+        'weight' => 15,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setRevisionable(TRUE)
+      ->setLabel(t('Entity type'))
+      ->setRequired(TRUE)
+      ->setSetting('max_length', 255)
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['entity_bundle'] = BaseFieldDefinition::create('string')
+      ->setRevisionable(TRUE)
+      ->setLabel(t('Entity bundle'))
+      ->setRequired(TRUE)
+      ->setSetting('max_length', 255)
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
 
     return $fields;
   }
