@@ -1,0 +1,55 @@
+id: amd_migrate_articles
+label: Articles
+migration_tags:
+  - Drupal 7
+source:
+  plugin: csv
+  path: modules/custom/amd_migrate/data/articles.csv
+  ids:
+    - id
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  fields:
+    -
+      label: ID
+      name: id
+    -
+      label: Title
+      name: title
+    -
+      label: body
+      name: body
+process:
+  # See https://www.drupal.org/node/2129651 on how to define
+  # process map for the migration.
+  langcode:
+    plugin: default_value
+    default_value: "en"
+  type: 
+    plugin: default_value
+    default_value: "article"
+  status: 
+    plugin: default_value
+    default_value: 1
+  uid: 
+    plugin: default_value
+    default_value: 1
+  title: title
+  body: body
+  field_tags:
+    - 
+      plugin: extract_animal
+      source: body
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate
+destination:
+  plugin: entity:node
+# The general rule of thumb is that any migrations referenced by migration
+# process plugins should be required here.
+#migration_dependencies:
+#  required:
+#    - example
